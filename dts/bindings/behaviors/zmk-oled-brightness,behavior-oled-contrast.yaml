@@ -1,0 +1,5 @@
+description: Set OLED display contrast
+
+compatible: "zmk-oled-brightness,behavior-oled-contrast"
+
+include: one_param.yaml

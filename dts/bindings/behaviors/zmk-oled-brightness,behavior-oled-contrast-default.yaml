@@ -1,0 +1,5 @@
+description: Set OLED display contrast to the configured default
+
+compatible: "zmk-oled-brightness,behavior-oled-contrast-default"
+
+include: zero_param.yaml

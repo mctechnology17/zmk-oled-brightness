@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2026 Marcos Chow Castro
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#pragma once
+
+#define ZMK_OLED_CONTRAST_UP 0
+#define ZMK_OLED_CONTRAST_DOWN 1
+
+#define ZMK_OLED_BRIGHTNESS_UP 0
+#define ZMK_OLED_BRIGHTNESS_DOWN 1
+
+#define ZMK_OLED_POWER_OFF 0
+#define ZMK_OLED_POWER_ON 1
+#define ZMK_OLED_POWER_TOGGLE 2
+
+#define ZMK_OLED_POWER_PROFILE_LOW 0
+#define ZMK_OLED_POWER_PROFILE_DEFAULT 1
+#define ZMK_OLED_POWER_PROFILE_HIGH 2

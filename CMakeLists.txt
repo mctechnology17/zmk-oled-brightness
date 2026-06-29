@@ -1,0 +1,17 @@
+# Copyright (c) 2026 Marcos Chow Castro
+# SPDX-License-Identifier: MIT
+
+zephyr_library()
+
+zephyr_include_directories(include)
+zephyr_include_directories(${APPLICATION_SOURCE_DIR}/include)
+
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS src/oled_brightness.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS src/events/oled_brightness_changed.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_brightness.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_brightness_step.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_contrast.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_contrast_default.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_contrast_step.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_power.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_OLED_BRIGHTNESS_BEHAVIORS src/behaviors/behavior_oled_power_profile.c)

@@ -1,0 +1,5 @@
+description: Step OLED display contrast up or down
+
+compatible: "zmk-oled-brightness,behavior-oled-contrast-step"
+
+include: two_param.yaml

@@ -1,0 +1,66 @@
+# Copyright (c) 2026 Marcos Chow Castro
+# SPDX-License-Identifier: MIT
+
+menu "ZMK OLED Brightness"
+
+config ZMK_OLED_BRIGHTNESS
+    bool "Enable runtime OLED brightness/contrast control"
+    depends on DISPLAY
+    help
+      Expose runtime APIs and keymap behaviors for display brightness and
+      contrast. On SSD1306 OLEDs, contrast is the useful runtime control.
+
+if ZMK_OLED_BRIGHTNESS
+
+config ZMK_OLED_BRIGHTNESS_DEFAULT
+    int "Default OLED contrast value"
+    default SSD1306_DEFAULT_CONTRAST if SSD1306
+    default 128
+    range 0 255
+
+config ZMK_OLED_BRIGHTNESS_MIN
+    int "Minimum OLED contrast value"
+    default 0
+    range 0 255
+
+config ZMK_OLED_BRIGHTNESS_MAX
+    int "Maximum OLED contrast value"
+    default 255
+    range 0 255
+
+config ZMK_OLED_BRIGHTNESS_STEP
+    int "Default OLED contrast step"
+    default 16
+    range 1 255
+
+config ZMK_OLED_BRIGHTNESS_DIRECT_I2C_CONTRAST
+    bool "Use direct SSD1306/SH1106 I2C contrast command"
+    default y
+    help
+      For I2C SSD1306/SH1106 OLEDs, send the same contrast command style used
+      by QMK: control byte 0x00, command 0x81, value 0..255. If unavailable,
+      the module falls back to Zephyr's display_set_contrast().
+
+config ZMK_OLED_BRIGHTNESS_PWM_BACKLIGHT
+    bool "Use a PWM LED backlight for brightness"
+    select LED
+    help
+      Make &oled_brightness use a devicetree node labeled disp_bl under a
+      pwm-leds device. This is for LCD/TFT displays with a physical backlight.
+      Standard SSD1306 OLEDs usually do not have a backlight, so leave this off.
+
+config ZMK_OLED_BRIGHTNESS_BEHAVIORS
+    bool "Enable OLED brightness keymap behaviors"
+    default y
+
+config ZMK_OLED_BRIGHTNESS_SETTINGS
+    bool "Persist OLED brightness/contrast settings"
+    depends on SETTINGS
+    default y
+    help
+      Save the last OLED brightness/contrast value to ZMK settings so it is
+      restored after reboot or power loss.
+
+endif # ZMK_OLED_BRIGHTNESS
+
+endmenu

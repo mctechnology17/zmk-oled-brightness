@@ -1,0 +1,5 @@
+description: Set OLED display power state
+
+compatible: "zmk-oled-brightness,behavior-oled-power"
+
+include: one_param.yaml

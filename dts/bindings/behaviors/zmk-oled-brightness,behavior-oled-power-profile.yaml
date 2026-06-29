@@ -1,0 +1,5 @@
+description: Set OLED power/contrast profile
+
+compatible: "zmk-oled-brightness,behavior-oled-power-profile"
+
+include: one_param.yaml

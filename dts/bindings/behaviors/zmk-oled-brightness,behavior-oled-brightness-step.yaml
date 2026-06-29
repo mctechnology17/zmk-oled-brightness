@@ -1,0 +1,5 @@
+description: Step OLED display brightness up or down
+
+compatible: "zmk-oled-brightness,behavior-oled-brightness-step"
+
+include: two_param.yaml

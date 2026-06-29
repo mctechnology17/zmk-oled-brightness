@@ -1,0 +1,5 @@
+description: Set OLED display brightness
+
+compatible: "zmk-oled-brightness,behavior-oled-brightness"
+
+include: one_param.yaml

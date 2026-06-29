@@ -1,0 +1,38 @@
+/*
+ * Copy the include and helper defines near the top of your keymap.
+ * The behavior nodes themselves come from oled_brightness.overlay.
+ */
+
+#include <dt-bindings/zmk-oled-brightness/oled-brightness.h>
+
+#define OLED_CONTRAST_LOW &ol_con 0
+#define OLED_CONTRAST_DEFAULT &ol_cond
+#define OLED_CONTRAST_HIGH &ol_con 255
+#define OLED_CONTRAST_DOWN &ol_cons ZMK_OLED_CONTRAST_DOWN 16
+#define OLED_CONTRAST_UP &ol_cons ZMK_OLED_CONTRAST_UP 16
+
+#define OLED_BRIGHTNESS_25 &ol_brt 25
+#define OLED_BRIGHTNESS_50 &ol_brt 50
+#define OLED_BRIGHTNESS_100 &ol_brt 100
+#define OLED_BRIGHTNESS_DOWN &ol_brts ZMK_OLED_BRIGHTNESS_DOWN 10
+#define OLED_BRIGHTNESS_UP &ol_brts ZMK_OLED_BRIGHTNESS_UP 10
+
+#define OLED_POWER_OFF &ol_pwr ZMK_OLED_POWER_OFF
+#define OLED_POWER_ON &ol_pwr ZMK_OLED_POWER_ON
+#define OLED_POWER_TOGGLE &ol_pwr ZMK_OLED_POWER_TOGGLE
+
+#define OLED_POWER_PROFILE_LOW &ol_prof ZMK_OLED_POWER_PROFILE_LOW
+#define OLED_POWER_PROFILE_DEFAULT &ol_prof ZMK_OLED_POWER_PROFILE_DEFAULT
+#define OLED_POWER_PROFILE_HIGH &ol_prof ZMK_OLED_POWER_PROFILE_HIGH
+
+/*
+ * Copy the bindings you want into one of your layers.
+ *
+ * Example:
+ *
+ * bindings = <
+ *     OLED_CONTRAST_LOW      OLED_CONTRAST_DEFAULT  OLED_CONTRAST_HIGH
+ *     OLED_CONTRAST_DOWN     OLED_CONTRAST_UP       OLED_POWER_TOGGLE
+ *     OLED_POWER_PROFILE_LOW OLED_POWER_PROFILE_DEFAULT OLED_POWER_PROFILE_HIGH
+ * >;
+ */
